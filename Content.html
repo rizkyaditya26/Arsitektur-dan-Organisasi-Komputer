@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <title>Arsitektur Teknologi Perkembangan Ilmu Komputer</title>
+        <link rel="stylesheet" href="call.css"/>
+    </head>
+
+    <body>     
+        <div class="div-navbar">
+            <ul class="ul-navbar">
+                <li class="li-navbar">
+                    <a href="Home.html" class="a-navbar">Home</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="Profile.html" class="a-navbar">Profile</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="About.html" class="a-navbar">About</a>
+                </li>          
+            </ul> 
+            <div class="logo">Algoritma <span>YOLO</span></div>  
+        </div>
+        
+        <div>
+            <h2 class="wx">Apa itu Algoritma <i>YOLO</i>? <br>Dalam Arsitektur Teknologi Perkembangan Ilmu Komputer</br></h2>
+        </div>
+        
+    <pre>
+        <div class="border-navbar">        
+            <p class="no-1">
+                                        Daftar Isi
+                1.1 Pengertian Algoritma YOLO
+                2.1 Contoh Program   
+                    2.1.1 Tutorial Deteksi Objek Menggunakan YOLO (Medium)
+                    2.1.2 Algoritma Deteksi Objek — Arsitektur YOLO v5 (ICHI.PRO)
+                    2.1.3 Deteksi Objek Sekitar Menggunakan YOLO untuk Autonomous Electric Vehicle (Unsri)
+                    2.1.4 Sistem Pengenalan Wajah Menggunakan Metode YOLO (Dinamika)
+                3.1 Alur dari Algoritma YOLO
+            </p> 
+        </div>     
+    </pre>
+    
+        <div>
+            <p class="p1"><strong>Sebelumnya apakah kamu tau apa itu "<i>YOLO</i>" (You Only Look Once).</strong></p>
+        <div>
+            <img src="algoritma YOLO.webp" width="50%" height="50%">
+        </div>
+
+            <p class="no-1">Algoritma You Only Look Once (YOLO) adalah sebuah algoritma deteksi objek yang dikembangkan oleh 
+                Redmon, Santosh Divvala, Ross Girshick dan Ali Farhadi pada tahun 2016. 
+                Algoritma ini memiliki pendekatan yang berbeda dengan metode deteksi objek lainnya 
+                karena melakukan deteksi dan klasifikasi objek secara simultan dalam satu langkah.</p>
+               
+            <p class="p2">
+                <strong>Algoritma YOLO (You Only Look Once)</strong>
+     
+            <p><br>1. Struktur Input</br>
+                <br>Algoritma You Only Look Once mengambil gambar input dengan ukuran tetap dan membaginya menjadi grid sel. 
+                Setiap sel bertanggung jawab untuk memprediksi kotak pembatas objek dan kelas objek di dalamnya.</br>
+                <br>2. Struktur Konvolusi</br>
+                <br>Algoritma You Only Look Once menggunakan lapisan konvolusi untuk mengekstrak fitur dari gambar input. 
+                Konvolusi ini membantu algoritma dalam memahami konteks dan membedakan objek berdasarkan fitur-fitur visual 
+                yang terdapat pada gambar.<br>
+                <br>3. Struktur Deteksi</br>
+                <br>Setelah proses konvolusi, algoritma You Only Look Once melakukan prediksi kotak pembatas objek dan kelas objek. 
+                Untuk setiap sel dalam grid, algoritma menghasilkan beberapa kotak pembatas dengan tingkat kepercayaan yang sesuai.<br>
+                <br>4. Struktur Output</br>
+                <br>Hasil akhir dari algoritma You Only Look Once adalah daftar kotak pembatas objek beserta label kelas dan tingkat kepercayaannya. 
+                Dengan menggunakan teknik non-maximum suppression, 
+                kotak-kotak yang tumpang tindih dihilangkan sehingga diperoleh deteksi objek yang akurat.<br>
+
+                <br>
+                    <strong class="br1">Cara Kerja Algoritma <i>YOLO</i></strong>
+                </br>
+                <br>1. Preprocessing</br>
+                <br>Sebelum memasukkan gambar ke dalam algoritma You Only Look Once , 
+                langkah pertama yang dilakukan adalah preprocessing. 
+                Pada tahap ini, gambar akan diubah ukurannya menjadi ukuran yang disesuaikan dengan input yang diterima oleh algoritma. 
+                Selain itu, gambar juga akan dinormalisasi untuk memastikan bahwa nilai piksel berada dalam rentang yang diharapkan.</br>
+                
+                <br>2. Pembagian Gambar menjadi Grid</br>
+                <br>Setelah tahap preprocessing selesai, gambar akan dibagi menjadi grid dengan ukuran tertentu. 
+                Setiap grid akan bertanggung jawab untuk mendeteksi objek yang berada di dalamnya. 
+                Selain itu, setiap grid juga akan menghasilkan beberapa bounding box yang memperkirakan posisi dan 
+                ukuran objek yang ada di dalamnya.</br>
+
+                <br>3. Prediksi dan NMS</br>
+                <br>Pada tahap ini, algoritma YOLO akan memprediksi kemungkinan adanya objek dalam setiap bounding box 
+                yang dihasilkan oleh grid. Untuk mengurangi kemungkinan adanya bounding box yang tumpang tindih dan 
+                mendapatkan hasil deteksi yang lebih akurat, dilakukan Non-Maximum Suppression (NMS) yang menghilangkan 
+                bounding box dengan overlap yang tinggi.</br>
+
+                <br>
+                    <strong class="br2">Bagaimana <i>YOLO</i> bekerja</strong>
+                </br>
+     
+            <p class="no-1">Algoritma YOLO menerapkan neural network pada sebuah gambar dan membagi input gambar menjadi sejumlah grid, 
+                lalu memprediksi bounding box serta probabilitas untuk masing-masing grid.
+                Pada gambar berikut diilustrasikan bounding box untuk kelas dog, bicycle, dan truck.</p>
+        <div>
+                <img src="gambar.jpg" width="500" height="250">
+        </div>
+            <p class="no-1">Untuk mendapatkan bounding box, dilakukan proses konvolusi dari input gambar, 
+                Untuk mendapatkan bounding box, dilakukan proses konvolusi dari input gambar, 
+                sehingga hasil akhirnya akan diperoleh ukuran bounding box sebesar SxSx(B*5+C) dengan B adalah banyaknya bounding box dalam 1 grid, 
+                dan C adalah banyaknya class yang dapat dideteksi.
+                <br></br>
+                Nilai B dikalikan dengan 5 karena sebuah bounding box memiliki 5 nilai yang perlu disimpan di antaranya:
+        <div class="style-type">  
+                <br>1) koordinat x</br>
+                <br>2) koordinat y</br>
+                <br>3) width (lebar)</br>
+                <br>4) height (tinggi), dan</br>
+                <br>5) confidence score (nilai probabilitas bounding box yang mendeteksi sebuah objek).</br>
+        </div>
+            <p class="no-1">Semua atribut pada bounding box melalui proses normalisasi, sehingga akan menghasilkan nilai antara 0 dan 1.
+                Koordinat x dan y akan dinormalisasi dengan menyesuaikan titik kiri atas dari grid yang bersangkutan.
+                Width (lebar) dan height (tinggi) juga akan dinormalisasi menyesuaikan dengan ukuran gambar.
+                <br>Ilustrasi proses ini dapat dilihat pada gambar berikut.</br>
+        <div>        
+                <img src="gambar2.png" width="600" height="300"> 
+        </div>
+        
+        <div>
+            <p class="k-1"><strong>Kesimpulan</strong></p>
+        </div>
+            <p class="no-1">YOLO (You Only Look Once) adalah model deteksi objek yang telah mengalami evolusi sejak pertama kali diperkenalkan. 
+                <br>Berikut adalah kesimpulan dari beberapa versi YOLO:
+                <strong><br>1) YOLO (Newborn):</br></strong>
+                Diperkenalkan pada Juni 2016.
+                Mengubah cara kita melihat deteksi objek dengan menganggapnya sebagai masalah regresi.
+                Lebih cepat, lebih akurat, dan lebih baik dalam generalisasi.
+                Cocok untuk aplikasi waktu nyata.
+                
+                <strong><br>2) YOLOv2 alias YOLO9000:</br></strong>
+                Diperkenalkan pada Desember 2016.
+                Menggunakan normalisasi batch di semua lapisan konvolusi.
+                Dapat menangani gambar beresolusi lebih tinggi dan lebih baik dalam mengenali objek kecil.
+                Menggunakan kotak jangkar untuk memprediksi bentuk dan ukuran objek dengan lebih akurat.
+
+                <strong><br>3) YOLOv3 & Tulang Punggung DarkNet:</br></strong>
+                Diperkenalkan pada April 2018.
+                Memperkenalkan prediksi objek pada tiga skala berbeda.
+                Lebih baik dalam mengenali objek dalam rentang ukuran yang lebih luas.
+
+                <strong><br>4) YOLOv8:</br></strong>
+                Model terbaru yang diharapkan untuk melanjutkan warisan YOLO dengan performa canggih dan 
+                keserbagunaan di berbagai aplikasi dan platform perangkat keras.
+                Kesimpulannya, YOLO telah mengalami perbaikan signifikan selama bertahun-tahun dan terus menjadi salah satu algoritma deteksi 
+                objek yang paling populer dan efisien.    
+            </p>
+           
+
+        </div>
+                
+                 
+    </body>
+    
+</html>
